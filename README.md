@@ -45,7 +45,7 @@ javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx
 Package the compiled classes into a JAR in the `output/` folder:
 
 ```bash
-jar --create --file build/DrawingShapes.jar -C build/ .
+jar --create --file out/DrawingShapes.jar -C out/ .
 ```
 
 > This JAR will be used later for running or packaging with `jpackage`.
@@ -65,7 +65,7 @@ To make a distributable `.exe` file, use `jpackage` (included in JDK 17+):
 ```bash
 jpackage \
   --name DrawingShapes \
-  --input build/ \
+  --input out/ \
   --main-jar DrawingShapes.jar \
   --module-path /path/to/javafx-sdk/jmods \
   --add-modules javafx.controls,javafx.fxml \
@@ -78,8 +78,9 @@ jpackage \
 One line:
 
 ```bash
-jpackage --name DrawingShapes --input build/ --main-jar DrawingShapes.jar --module-path /path/to/javafx-sdk/jmods --add-modules javafx.controls,javafx.fxml --win-installer --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
+jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module-path /path/to/javafx-sdk/jmods --add-modules javafx.controls,javafx.fxml --win-installer --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
 ```
+> Dont forget to replace `/path/to/javafx-sdk/jmods` with the path to your JavaFX SDK `jmods` folder.
 
 * This will generate a Windows installer (`.exe`) or `.msi` in the current folder.
 * You can optionally add an icon using `--icon path/to/icon.ico`.

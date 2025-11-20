@@ -45,7 +45,7 @@ javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx
 Package the compiled classes into a JAR in the `output/` folder:
 
 ```bash
-jar --create --file out/DrawingShapes.jar -C out/ .
+jar --create --file out/DrawingShapes.jar -m Manifest.txt -C out/ .
 ```
 
 > This JAR will be used later for running or packaging with `jpackage`.

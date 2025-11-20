@@ -37,7 +37,7 @@ cd DrawingShapes
 Replace `/path/to/javafx-sdk/lib` with the path to your JavaFX SDK `lib` folder (or equivalent OpenJFX modules):
 
 ```bash
-javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -d out src/DrawingShapes.java
+javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -d out ./DrawingShapes.java
 ```
 
 ### 3. Run the application

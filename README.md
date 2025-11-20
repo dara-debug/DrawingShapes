@@ -69,7 +69,7 @@ jpackage \
   --main-jar DrawingShapes.jar \
   --module-path /path/to/javafx-sdk/jmods \
   --add-modules javafx.controls,javafx.fxml \
-  --type msi \
+  --type exe \
   --win-shortcut \
   --win-menu \
   --win-per-user-install \
@@ -78,7 +78,7 @@ jpackage \
 One line:
 
 ```bash
-jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module-path C:\openjfx-21.0.9_windows-x64_bin-jmods\javafx-jmods-21.0.9 --add-modules javafx.controls,javafx.fxml --type msi --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
+jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module-path C:\openjfx-21.0.9_windows-x64_bin-jmods\javafx-jmods-21.0.9 --add-modules javafx.controls,javafx.fxml --type exe --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
 ```
 > Dont forget to replace `/path/to/javafx-sdk/jmods` with the path to your JavaFX SDK `jmods` folder.
 

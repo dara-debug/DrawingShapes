@@ -40,7 +40,17 @@ Replace `/path/to/javafx-sdk/lib` with the path to your JavaFX SDK `lib` folder 
 javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -d out ./DrawingShapes.java
 ```
 
-### 3. Run the application
+### 3. Create a JAR file
+
+Package the compiled classes into a JAR in the `output/` folder:
+
+```bash
+jar --create --file output/DrawingShapes.jar -C out/ .
+```
+
+> This JAR will be used later for running or packaging with `jpackage`.
+
+### 4. Run the application
 
 ```bash
 java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -cp out DrawingShapes

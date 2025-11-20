@@ -45,7 +45,7 @@ javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx
 Package the compiled classes into a JAR in the `output/` folder:
 
 ```bash
-jar --create --file output/DrawingShapes.jar -C out/ .
+jar --create --file build/DrawingShapes.jar -C build/ .
 ```
 
 > This JAR will be used later for running or packaging with `jpackage`.
@@ -65,11 +65,19 @@ To make a distributable `.exe` file, use `jpackage` (included in JDK 17+):
 ```bash
 jpackage \
   --name DrawingShapes \
-  --input out/ \
+  --input build/ \
   --main-jar DrawingShapes.jar \
   --module-path /path/to/javafx-sdk/jmods \
   --add-modules javafx.controls,javafx.fxml \
-  --win-installer
+  --win-installer \
+  --win-shortcut \
+  --win-menu \
+  --win-per-user-install
+```
+One line:
+
+```bash
+jpackage --name DrawingShapes --input build/ --main-jar DrawingShapes.jar --module-path /path/to/javafx-sdk/jmods --add-modules javafx.controls,javafx.fxml --win-installer --win-shortcut --win-menu --win-per-user-install
 ```
 
 * This will generate a Windows installer (`.exe`) or `.msi` in the current folder.

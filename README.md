@@ -72,12 +72,13 @@ jpackage \
   --win-installer \
   --win-shortcut \
   --win-menu \
-  --win-per-user-install
+  --win-per-user-install \
+  --win-dir-chooser
 ```
 One line:
 
 ```bash
-jpackage --name DrawingShapes --input build/ --main-jar DrawingShapes.jar --module-path /path/to/javafx-sdk/jmods --add-modules javafx.controls,javafx.fxml --win-installer --win-shortcut --win-menu --win-per-user-install
+jpackage --name DrawingShapes --input build/ --main-jar DrawingShapes.jar --module-path /path/to/javafx-sdk/jmods --add-modules javafx.controls,javafx.fxml --win-installer --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
 ```
 
 * This will generate a Windows installer (`.exe`) or `.msi` in the current folder.

@@ -36,7 +36,7 @@ To run and package this project, you need **both the JavaFX SDK and the JavaFX j
    * Contains the `jmods` folder needed to bundle JavaFX into a packaged installer.
    * [GluonHQ JavaFX jmods Downloads](https://gluonhq.com/products/javafx/)
 
-> ⚠️ Make sure both downloads match your **JDK version** (e.g., JDK 17 → JavaFX 17 SDK and jmods).
+> Make sure both downloads match your **JDK version** (e.g., JDK 17 → JavaFX 17 SDK and jmods).
 
 3. **Unpack the files** somewhere on your computer, e.g.:
 
@@ -96,7 +96,7 @@ jpackage \
   --main-jar DrawingShapes.jar \
   --module-path /path/to/javafx-jmods \
   --add-modules javafx.controls,javafx.fxml \
-  --type msi \
+  --type exe \
   --win-shortcut \
   --win-menu \
   --win-per-user-install \
@@ -106,7 +106,7 @@ jpackage \
 One line:
 
 ```bash
-jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module-path C:\openjfx-21.0.9_windows-x64_bin-jmods\javafx-jmods-21.0.9 --add-modules javafx.controls,javafx.fxml --type msi --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
+jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module-path C:\openjfx-21.0.9_windows-x64_bin-jmods\javafx-jmods-21.0.9 --add-modules javafx.controls,javafx.fxml --type exe --win-shortcut --win-menu --win-per-user-install --win-dir-chooser
 ```
 
 > Don’t forget to replace `/path/to/javafx-jmods` with the path to your JavaFX jmods folder.
@@ -130,5 +130,4 @@ jpackage --name DrawingShapes --input out/ --main-jar DrawingShapes.jar --module
 
 * For best results, keep your JavaFX SDK version compatible with your JDK version.
 * The animation refresh rate is set to **0.5 seconds** but can be modified in `Timeline`.
-* Large generated files like `/output/` are ignored in Git to keep the repository lightweight.
 * When packaging the application with `jpackage`, ensure you have the JavaFX `jmods` folder (or equivalent modules) so the executable includes all required JavaFX components.
